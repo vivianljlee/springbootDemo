@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.estar.demo.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.estar.demo.dao.entity.User" >
+    <result column="userid" property="userid" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="usercode" property="usercode" jdbcType="VARCHAR" />
+    <result column="idnum" property="idnum" jdbcType="VARCHAR" />
+    <result column="realname" property="realname" jdbcType="VARCHAR" />
+    <result column="gender" property="gender" jdbcType="CHAR" />
+    <result column="phonenum" property="phonenum" jdbcType="VARCHAR" />
+    <result column="avatar" property="avatar" jdbcType="VARCHAR" />
+    <result column="street" property="street" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="usertype" property="usertype" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="CHAR" />
+    <result column="createtime" property="createtime" jdbcType="DATE" />
+    <result column="createuser" property="createuser" jdbcType="VARCHAR" />
+    <result column="modifytime" property="modifytime" jdbcType="DATE" />
+    <result column="modifyuser" property="modifyuser" jdbcType="VARCHAR" />
+    <result column="enable" property="enable" jdbcType="CHAR" />
+    <result column="birthday" property="birthday" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="CHAR" />
+    <result column="city" property="city" jdbcType="CHAR" />
+    <result column="area" property="area" jdbcType="CHAR" />
+    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    userid, username, password, usercode, idnum, realname, gender, phonenum, avatar, 
+    street, email, usertype, state, createtime, createuser, modifytime, modifyuser, enable, 
+    birthday, province, city, area, nickname
+  </sql>
+  <insert id="insert" parameterType="com.estar.demo.dao.entity.User" >
+    insert into gxh_base_user (userid, username, password, 
+      usercode, idnum, realname, 
+      gender, phonenum, avatar, 
+      street, email, usertype, 
+      state, createtime, createuser, 
+      modifytime, modifyuser, enable, 
+      birthday, province, city, 
+      area, nickname)
+    values (#{userid,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{usercode,jdbcType=VARCHAR}, #{idnum,jdbcType=VARCHAR}, #{realname,jdbcType=VARCHAR}, 
+      #{gender,jdbcType=CHAR}, #{phonenum,jdbcType=VARCHAR}, #{avatar,jdbcType=VARCHAR}, 
+      #{street,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{usertype,jdbcType=VARCHAR}, 
+      #{state,jdbcType=CHAR}, #{createtime,jdbcType=DATE}, #{createuser,jdbcType=VARCHAR}, 
+      #{modifytime,jdbcType=DATE}, #{modifyuser,jdbcType=VARCHAR}, #{enable,jdbcType=CHAR}, 
+      #{birthday,jdbcType=VARCHAR}, #{province,jdbcType=CHAR}, #{city,jdbcType=CHAR}, 
+      #{area,jdbcType=CHAR}, #{nickname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.estar.demo.dao.entity.User" >
+    insert into gxh_base_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="usercode != null" >
+        usercode,
+      </if>
+      <if test="idnum != null" >
+        idnum,
+      </if>
+      <if test="realname != null" >
+        realname,
+      </if>
+      <if test="gender != null" >
+        gender,
+      </if>
+      <if test="phonenum != null" >
+        phonenum,
+      </if>
+      <if test="avatar != null" >
+        avatar,
+      </if>
+      <if test="street != null" >
+        street,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="usertype != null" >
+        usertype,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="createuser != null" >
+        createuser,
+      </if>
+      <if test="modifytime != null" >
+        modifytime,
+      </if>
+      <if test="modifyuser != null" >
+        modifyuser,
+      </if>
+      <if test="enable != null" >
+        enable,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="province != null" >
+        province,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="area != null" >
+        area,
+      </if>
+      <if test="nickname != null" >
+        nickname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="usercode != null" >
+        #{usercode,jdbcType=VARCHAR},
+      </if>
+      <if test="idnum != null" >
+        #{idnum,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null" >
+        #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=CHAR},
+      </if>
+      <if test="phonenum != null" >
+        #{phonenum,jdbcType=VARCHAR},
+      </if>
+      <if test="avatar != null" >
+        #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="street != null" >
+        #{street,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="usertype != null" >
+        #{usertype,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=CHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="createuser != null" >
+        #{createuser,jdbcType=VARCHAR},
+      </if>
+      <if test="modifytime != null" >
+        #{modifytime,jdbcType=DATE},
+      </if>
+      <if test="modifyuser != null" >
+        #{modifyuser,jdbcType=VARCHAR},
+      </if>
+      <if test="enable != null" >
+        #{enable,jdbcType=CHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=CHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=CHAR},
+      </if>
+      <if test="area != null" >
+        #{area,jdbcType=CHAR},
+      </if>
+      <if test="nickname != null" >
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+   <select id="getUserList" resultType="com.estar.demo.dao.entity.User"  >
+       SELECT * FROM gxh_base_user limit #{begin,jdbcType=INTEGER},#{end,jdbcType=INTEGER}
+    </select>
+</mapper>
